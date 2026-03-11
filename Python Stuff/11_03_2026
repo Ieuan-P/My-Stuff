@@ -21,32 +21,70 @@
 
 #Program
 
-    Attempt = random.randint(Bottom,Top)
-Iterate = 30
-Bottom = 1
-TWO = []
-print(", ".join(SEVEN))
-print("THREE", end = " - ")
-THREE = []
-for NUM in NUMBERS:
-    if NUM % 5 == 0:
-            FIVE.append(str(NUM))
-while len(NUMBERS) < Iterate:
-print(", ".join(THREE))    
-    if Attempt not in NUMBERS:
-        THREE.append(str(NUM))
-    if NUM % 3 == 0:       
+#    Attempt = random.randint(Bottom,Top)
+#Iterate = 30
+#Bottom = 1
+#TWO = []
+#print(", ".join(SEVEN))
+#print("THREE", end = " - ")
+#THREE = []
+#for NUM in NUMBERS:
+#    if NUM % 5 == 0:
+#            FIVE.append(str(NUM))
+#while len(NUMBERS) < Iterate:
+#print(", ".join(THREE))    
+#    if Attempt not in NUMBERS:
+#        THREE.append(str(NUM))
+#    if NUM % 3 == 0:       
+#import random
+#        NUMBERS.append(Attempt)
+#    if NUM % 2 == 0:
+#print(", ".join(FIVE))
+#Top = 100
+#print("SEVEN", end = " - ")            
+#    if NUM % 7 == 0:       
+#FIVE = []
+#print("FIVE", end = " - ")
+#SEVEN = []        
+#print("TWO", end = " - ")
+#        TWO.append(str(NUM))
+#print(", ".join(TWO))
+#        SEVEN.append(str(NUM))#
+
 import random
-        NUMBERS.append(Attempt)
-    if NUM % 2 == 0:
-print(", ".join(FIVE))
-Top = 100
-print("SEVEN", end = " - ")            
-    if NUM % 7 == 0:       
+# Constants
+ITERATE = 30
+BOTTOM = 1
+TOP = 100
+
+# Variables
+NUMBERS = []
+TWO = []
+THREE = []
 FIVE = []
-print("FIVE", end = " - ")
-SEVEN = []        
+SEVEN = []
+
+# Program
+while len(NUMBERS) < ITERATE:
+    attempt = random.randint(BOTTOM, TOP)
+    if attempt not in NUMBERS:
+        NUMBERS.append(attempt)
+
+for num in NUMBERS:
+    if num % 2 == 0:
+        TWO.append(str(num))
+    if num % 3 == 0:
+        THREE.append(str(num))
+    if num % 5 == 0:
+       FIVE.append(str(num))
+    if num % 7 == 0:
+        SEVEN.append(str(num))
+
 print("TWO", end = " - ")
-        TWO.append(str(NUM))
 print(", ".join(TWO))
-        SEVEN.append(str(NUM))
+print("THREE", end = " - ")
+print(", ".join(THREE))
+print("FIVE", end = " - ")
+print(", ".join(FIVE))
+print("SEVEN", end = " - ")
+print(", ".join(SEVEN))
