@@ -1,0 +1,52 @@
+#The following program should complete the following
+#Selection 30 random numbers between 1-100
+#Append each number in an Array called "NUMBERS"
+#Then it'll will test each number to ensure it is sorted in one or more of the following arrays:
+#Can be divisable by 2; if true add to the TWO Array
+#Can be divisable by 3; if true add to the THREE Array
+#Can be divisable by 5; if true add to the FIVE Array
+#Can be divisable by 7; if true add to the SEVEN Array
+#Not divisable by any of the above, do nothing.
+#At the end of the program it will display and output of the 4 Arrays in the following order
+#TWO
+#THREE 
+#FIVE
+#SEVEN
+
+#Libaries
+
+#Varibles
+
+#Constants
+
+#Program
+
+    Attempt = random.randint(Bottom,Top)
+Iterate = 30
+Bottom = 1
+TWO = []
+print(", ".join(SEVEN))
+print("THREE", end = " - ")
+THREE = []
+for NUM in NUMBERS:
+    if NUM % 5 == 0:
+            FIVE.append(str(NUM))
+while len(NUMBERS) < Iterate:
+print(", ".join(THREE))    
+    if Attempt not in NUMBERS:
+        THREE.append(str(NUM))
+    if NUM % 3 == 0:       
+import random
+        NUMBERS.append(Attempt)
+    if NUM % 2 == 0:
+print(", ".join(FIVE))
+Top = 100
+print("SEVEN", end = " - ")            
+    if NUM % 7 == 0:       
+FIVE = []
+print("FIVE", end = " - ")
+SEVEN = []        
+print("TWO", end = " - ")
+        TWO.append(str(NUM))
+print(", ".join(TWO))
+        SEVEN.append(str(NUM))
