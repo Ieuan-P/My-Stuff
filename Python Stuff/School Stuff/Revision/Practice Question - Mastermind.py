@@ -7,25 +7,54 @@
 # 3. After the game is finished, ask the user for their name and input their score into a table. Show them the high score at the start of the game so that it gives a sense of competition
 
 import random
-def generate_random_number(length):
-    return ''.join(random.choices('0123456789', k=length))
-def count_correct_digits(secret, guess):
-    return sum(1 for s, g in zip(secret, guess) if s == g)
-def mastermind():
-    length = 4
-    secret_number = generate_random_number(length)
-    attempts = 0
-    print("Welcome to Mastermind! Try to guess the 4-digit number.")
-    
+from statistics import mode
+
+def easymode():
+    random_number = str(random.randint(1000, 9999))
+    tries = 0
     while True:
-        guess = input("Enter your guess: ")
-        attempts += 1
-        
-        if guess == secret_number:
-            print(f"Congratulations! You've guessed the number in {attempts} attempts.")
+        user_input = input("Enter a four digit number: ")
+        tries += 1
+        if user_input == random_number:
+            print(f"Congratulations! You've guessed the number in {tries} tries.")
             break
         else:
-            correct_digits = count_correct_digits(secret_number, guess)
-            print(f"You have {correct_digits} correct digits.")
+            correct_positions = sum(1 for a, b in zip(user_input, random_number) if a == b)
+            correct_positions = sum(1 for a, b in zip(user_input, random_number) if a == b)
+            correct_digits = [i for i, (a, b) in enumerate(zip(user_input, random_number)) if a == b]
+            print(f"You got {correct_positions} digits correct and in the right position at position(s): {correct_digits}")
 
-mastermind()
+def hardmode():
+    random_number = str(random.randint(10000, 99999))
+    tries = 0
+    while True:
+        user_input = input("Enter a five digit number: ")
+        tries += 1
+        if user_input == random_number:
+            print(f"Congratulations! You've guessed the number in {tries} tries.")
+            break
+        else:
+            correct_digits = sum(1 for a in user_input if a in random_number)
+            print(f"You got {correct_digits} digits correct but not necessarily in the right position.")
+
+def invalid_input():
+    print("Invalid mode selected. Please choose E for Easy or H for Hard.")
+    mode = input("Choose a mode: Easy (E) or Hard (H): ").upper()
+    if mode == 'E':
+        easymode()
+    elif mode == 'H':
+        hardmode()
+    else:
+        invalid_input()
+
+def main():
+    print("Welcome to Mastermind!")
+    mode = input("Choose a mode: Easy (E) or Hard (H): ").upper()
+    if mode == 'E':
+        easymode()
+    elif mode == 'H':
+        hardmode()
+    else:
+        invalid_input()
+
+main()
