@@ -61,8 +61,8 @@ def hardmode():
                 print("Thanks for playing!")
             break
         else:
-            correct_digits = sum(1 for a in user_input if a in random_number)
-            print(f"You got {correct_digits} digits correct but not necessarily in the right position.")
+            correct_positions = sum(1 for a, b in zip(user_input, random_number) if a == b)
+            print(f"You got {correct_positions} digits correct and in the right position.")
 
 def view_leaderboards():
     try:
