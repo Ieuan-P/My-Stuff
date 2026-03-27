@@ -19,10 +19,9 @@ def easymode():
             print(f"Congratulations! You've guessed the number in {tries} tries.")
             break
         else:
-            correct_positions = sum(1 for a, b in zip(user_input, random_number) if a == b)
-            correct_positions = sum(1 for a, b in zip(user_input, random_number) if a == b)
-            correct_digits = [i for i, (a, b) in enumerate(zip(user_input, random_number)) if a == b]
-            print(f"You got {correct_positions} digits correct and in the right position at position(s): {correct_digits}")
+            correct_positions = [i for i, (a, b) in enumerate(zip(user_input, random_number)) if a == b]
+            display = ['?' if i not in correct_positions else user_input[i] for i in range(len(user_input))]
+            print(f"You got {len(correct_positions)} digits correct and in the right position: {display}")
 
 def hardmode():
     random_number = str(random.randint(10000, 99999))
@@ -36,6 +35,10 @@ def hardmode():
         else:
             correct_digits = sum(1 for a in user_input if a in random_number)
             print(f"You got {correct_digits} digits correct but not necessarily in the right position.")
+            print("Do you want to play again? (Y/N):")
+            if input().upper() == 'Y':
+                main()
+            else:                print("Thanks for playing!")
 
 def invalid_input():
     print("Invalid mode selected. Please choose E for Easy or H for Hard.")
