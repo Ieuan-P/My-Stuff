@@ -8,6 +8,11 @@
 
 import random
 from statistics import mode
+import os
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+easy_leaderboard = os.path.join(script_dir, "easymode_leaderboard")
+hard_leaderboard = os.path.join(script_dir, "hardmode_leaderboard")
 
 def easymode():
     random_number = str(random.randint(1000, 9999))
@@ -17,10 +22,17 @@ def easymode():
         tries += 1
         if user_input == random_number:
             print(f"Congratulations! You've guessed the number in {tries} tries.")
-            print("Do you want to play again? (Y/N):")
-            if input().upper() == 'Y':
+            name = input("Enter your name for the leaderboard: ")
+            with open(easy_leaderboard, "a") as f:
+                f.write(f"{name},easy,{tries}\n")
+            print("Do you want to play again or view the leaderboard? (Y/N/V):")
+            choice = input().upper()
+            if choice == 'Y':
                 main()
-            else:                print("Thanks for playing!")
+            elif choice == 'V':
+                view_leaderboards()
+            else:
+                print("Thanks for playing!")
             break
         else:
             correct_positions = [i for i, (a, b) in enumerate(zip(user_input, random_number)) if a == b]
@@ -36,32 +48,73 @@ def hardmode():
         tries += 1
         if user_input == random_number:
             print(f"Congratulations! You've guessed the number in {tries} tries.")
-            print("Do you want to play again? (Y/N):")
-            if input().upper() == 'Y':
+            name = input("Enter your name for the leaderboard: ")
+            with open(hard_leaderboard, "a") as f:
+                f.write(f"{name},hard,{tries}\n")
+            print("Do you want to play again or view the leaderboard? (Y/N/V):")
+            choice = input().upper()
+            if choice == 'Y':
                 main()
-            else:                print("Thanks for playing!")
+            elif choice == 'V':
+                view_leaderboards()
+            else:
+                print("Thanks for playing!")
             break
         else:
             correct_digits = sum(1 for a in user_input if a in random_number)
             print(f"You got {correct_digits} digits correct but not necessarily in the right position.")
 
+def view_leaderboards():
+    try:
+        with open(easy_leaderboard, "r") as f:
+            easy_entries = [line.strip().split(',') for line in f if line.strip()]
+    except FileNotFoundError:
+        easy_entries = []
+    easy_entries.sort(key=lambda x: int(x[2]))
+    print("Easy Mode Leaderboard:")
+    if easy_entries:
+        for entry in easy_entries:
+            print(f"{entry[0]}: {entry[2]} tries")
+    else:
+        print("No entries yet.")
+    print()
+    try:
+        with open(hard_leaderboard, "r") as f:
+            hard_entries = [line.strip().split(',') for line in f if line.strip()]
+    except FileNotFoundError:
+        hard_entries = []
+    hard_entries.sort(key=lambda x: int(x[2]))
+    print("Hard Mode Leaderboard:")
+    if hard_entries:
+        for entry in hard_entries:
+            print(f"{entry[0]}: {entry[2]} tries")
+    else:
+        print("No entries yet.")
+    print()
+    input("Press enter to return to menu.")
+    main()
+
 def invalid_input():
-    print("Invalid mode selected. Please choose E for Easy or H for Hard.")
-    mode = input("Choose a mode: Easy (E) or Hard (H): ").upper()
+    print("Invalid choice selected. Please choose E for Easy, H for Hard, or V for View Leaderboards.")
+    mode = input("Choose a mode: Easy (E), Hard (H), or View Leaderboards (V): ").upper()
     if mode == 'E':
         easymode()
     elif mode == 'H':
         hardmode()
+    elif mode == 'V':
+        view_leaderboards()
     else:
         invalid_input()
 
 def main():
     print("Welcome to Mastermind!")
-    mode = input("Choose a mode: Easy (E) or Hard (H): ").upper()
+    mode = input("Choose a mode: Easy (E), Hard (H), or View Leaderboards (V): ").upper()
     if mode == 'E':
         easymode()
     elif mode == 'H':
         hardmode()
+    elif mode == 'V':
+        view_leaderboards()
     else:
         invalid_input()
 
