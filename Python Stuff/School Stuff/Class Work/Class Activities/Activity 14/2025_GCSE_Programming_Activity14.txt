@@ -1,0 +1,6 @@
+Ant,5
+Bear,4
+Cat,3
+Dog,2
+Elephant,1
+Flamingo,8
