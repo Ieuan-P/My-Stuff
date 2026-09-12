@@ -1,3 +1,5 @@
+import random
+
 def Q5():
     n = int(input("Enter a number greater than 2: "))
     if n <= 2:
@@ -11,4 +13,12 @@ def Q5():
                 break
         print(prime)
 
-Q5()
+def Q6():
+    num1 = random.randint(1,10)
+    num2 = random.randint(1,10)
+    num3 = random.randint(1,10)
+    num4 = random.randint(1,10)
+    num5 = random.randint(1,10)
+    print(f"The average of the five random numbers is: {(num1+num2+num3+num4+num5)/5}")
+
+Q6()
