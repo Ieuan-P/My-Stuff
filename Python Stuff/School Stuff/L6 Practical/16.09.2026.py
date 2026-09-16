@@ -1,4 +1,5 @@
 import math
+
 def Q9():
     n = int(input("Enter a number: "))
     Nsum = sum(int(d) for d in str(n))
