@@ -1,3 +1,5 @@
+import math
+
 def numbers(n):
         return [int(d) for d in str(n)]
 
@@ -37,3 +39,10 @@ def Q15():
      print(f"The longest word in the sentence is: {max(words, key=len)}")
 
 #Q15()
+
+def Q16():
+     A = int(input("Enter a number: "))
+     B = int(input("Enter a number: "))
+     print(f"The GCD of {A} and {B} is: {math.gcd(A, B)}")
+
+#Q16()
