@@ -36,4 +36,4 @@ def Q15():
      words = sentence.split()
      print(f"The longest word in the sentence is: {max(words, key=len)}")
 
-Q15()
+#Q15()
