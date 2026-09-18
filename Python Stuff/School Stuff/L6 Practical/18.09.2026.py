@@ -12,6 +12,7 @@ def Luhn(number):
     return checksum % 10 == 0
 
 number = input("Enter a credit card number: ")
+number = number.replace(" ", "")
 
 if Luhn(number):
     print("The credit card number is valid.")
