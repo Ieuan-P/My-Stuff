@@ -38,7 +38,7 @@ def Q12():
 #Q12()
 
 def Q12Compact():
-    Sen = input("Enter a string: ") ; print("Letters: "+str(sum(i.isalpha() for i in Sen)), "Digits: "+str(sum(i.isdigit() for i in Sen)))
+    print(f"{(Sen := input("Enter a string: ")).replace(Sen,"")}Letters: {sum(i.isalpha() for i in Sen)}\nDigits: {sum(i.isdigit() for i in Sen)}")
 
 #Q12Compact()
 

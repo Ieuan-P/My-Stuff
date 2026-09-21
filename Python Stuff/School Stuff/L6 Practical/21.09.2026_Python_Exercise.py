@@ -3,7 +3,7 @@ import random
 
 def display_intro():
     pass # ===== Code here =====
-    print (f"=== Treasure Hunt Adventure === /n Explore 3 locations and collect random gold!")
+    print (f"=== Treasure Hunt Adventure ===\nExplore 3 locations and collect random gold!")
 def choose_location():
     pass # ===== Code here =====
     return input("Choose a location (cave / forest / beach)").lower()
@@ -23,9 +23,9 @@ def display_location_result(loc, g_found):
 def display_final_result(total_g):
     pass # ===== Code here =====
     if total_g >= 20:
-        print (f"Total Gold: {total_g} /n You Win! Rich Explorer!")
+        print (f"Total Gold: {total_g}\nYou Win! Rich Explorer!")
     else:
-        print (f"Total gold: {total_g} /n You Lose! Try Again!")
+        print (f"Total gold: {total_g}\nYou Lose! Try Again!")
 # ===== MAIN PROGRAM =====
 
 total_gold = 0
