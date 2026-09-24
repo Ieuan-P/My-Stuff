@@ -96,7 +96,7 @@ def P6():
 def P7():
     while True:
         try:
-            Email = str(input("Enter email: "))
+            Email = list(input("Enter email: "))
             break
         except:
             print("Something went wrong. Try again...")
@@ -117,7 +117,7 @@ def P7():
     else:
         print("Email is valid")
 
-P7()
+#P7()
 
 def MainMenu():
     while True:
