@@ -96,16 +96,18 @@ def P6():
 def P7():
     while True:
         try:
-            Email = list(input("Enter email: "))
+            Email = list(str(input("Enter email: ")))
             break
         except:
             print("Something went wrong. Try again...")
+            P7()
     AtSign = 0
-    for i in len(Email):
+    for i in range(len(Email)):
         if Email[i] == "@":
             AtSign = i
     if AtSign == 0:
         print("Email is invalid")
+        return
     Before_AtSign = []
     for i in range(AtSign - 1):
         Before_AtSign.append(1,Email[i])
@@ -114,10 +116,34 @@ def P7():
         After_AtSign.append(Email[i])
     if Before_AtSign == [] and After_AtSign == []:
         print("Email is invalid")
+        return
     else:
         print("Email is valid")
 
-#P7()
+def P8():
+    while True:
+        try:
+            Palindrome = str(input("Enter a string: "))
+            break
+        except:
+            print("Something went wrong. Try Again...")
+            P8()
+    if Palindrome == Palindrome[::-1]:
+        print("String is a palindrome")
+    else:
+        print("String is not a palindrome")
+
+def P9():
+    while True:
+        try:
+            Username = input()
+            Pasword = input()
+        except:
+            print("Something went wrong. Try again...")
+            P9
+    Users = [["User01", "PaSsWoRd"], ["UserBob01", "L33TProgrammer"],["Admin", "Admin"]]
+    if Username in Users_and_Passwords:
+        
 
 def MainMenu():
     while True:
