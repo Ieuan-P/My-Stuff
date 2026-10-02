@@ -24,9 +24,10 @@ def checkstring(xstring):
         return f"({xstring}) String is Valid"
 
 def main():
-    IsValid = checkstring(input("Enter a string: "))
+    UserInput = input("Enter a string: ")
+    IsValid = checkstring(UserInput)
     print(IsValid)
-    if IsValid != f"({xstring}) String is Valid":
+    if IsValid != f"({UserInput}) String is Valid":
         main()
 
 main()
