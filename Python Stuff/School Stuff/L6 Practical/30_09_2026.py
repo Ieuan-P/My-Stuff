@@ -16,6 +16,10 @@ def checkstring(xstring):
         if sum(1 for item in xstring if item == char) != 1:
             return "String must contain only unique characters"
             break
+    
+    if sum(ord(item) for item in xstring) not in range (420,601):
+        return f"Sum of ASCII values must be between 420 and 600 (inclusive)\nCurrent sum is: {sum(ord(item) for item in xstring)}"
+    
     else:
         return "String is Valid"
 
@@ -25,6 +29,4 @@ def main():
     if IsValid != "String is Valid":
         main()
 
-#main()
-nstring = "abcde"
-print()
+main()
