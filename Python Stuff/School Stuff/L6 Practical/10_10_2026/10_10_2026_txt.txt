@@ -1,0 +1,4 @@
+B001,Python Crash Course,Eric Matthes
+B002,The Hobbit,J.R.R. Tolkien
+B003,Nineteen Eighty-Four,George Orwell
+B004,A Brief History of Time,Stephen Hawking
