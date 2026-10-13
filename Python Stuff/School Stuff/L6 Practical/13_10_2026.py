@@ -34,3 +34,18 @@ def B2020():
         print(f"The most frequent number is: {Most_Frequent}, which appears {frequency} times")
 
 #B2020()
+
+#Section B - 2021
+#A program that asks the user to enter a number, n, and will then calculate and display the nth Harshad number.
+def B2021():
+    n = int(input("Enter a number: "))
+    count = 0
+    num = 1
+    while count < n:
+        digit_sum = sum(int(digit) for digit in str(num))
+        if num % digit_sum == 0:
+            count += 1
+            if count == n:
+                print(f"The {n}th Harshad number is: {num}")
+                return
+        num += 1
