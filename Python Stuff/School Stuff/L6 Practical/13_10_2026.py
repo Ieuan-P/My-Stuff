@@ -36,7 +36,7 @@ def B2020():
 #B2020()
 
 #Section B - 2021
-#A program that asks the user to enter a number, n, and will then calculate and display the nth Harshad number.
+
 def B2021():
     n = int(input("Enter a number: "))
     count = 0
@@ -49,3 +49,5 @@ def B2021():
                 print(f"The {n}th Harshad number is: {num}")
                 return
         num += 1
+
+B2021()
