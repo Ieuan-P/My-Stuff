@@ -1,6 +1,5 @@
 Score_List = [[0, 0] for _ in range(11)]
 
-
 def main():
     for frame in range(10):
         while True:
