@@ -1,5 +1,3 @@
-
-
 Score_List = [[0, 0] for _ in range(11)]
 
 
@@ -9,10 +7,12 @@ def main():
             Score_List[frame][0] = int(input(f"Enter the number of pins knocked down in your first roll of frame {frame + 1}: "))
             if 0 <= Score_List[frame][0] <= 10:
                 break
+        
         while True:
             if Score_List[frame][0] == 10:
                 Score_List[frame][1] = 0
                 break
+            
             Score_List[frame][1] = int(input(f"Enter the number of pins knocked down in your second roll of frame {frame + 1}: "))
             if 0 <= Score_List[frame][1] <= 10 - Score_List[frame][0]:
                 break
@@ -34,16 +34,21 @@ def main():
                 Score_List[frame].append(Score_List[frame + 1][0])
                 if Score_List[frame + 1][0] == 10 and frame < 8:
                     Score_List[frame].append(Score_List[frame + 2][0])
+                
                 else:
                     Score_List[frame].append(Score_List[frame + 1][1])
+            
             else:
                 Score_List[frame].append(Score_List[10][0])
                 Score_List[frame].append(Score_List[10][1])
+        
         elif sum(Score_List[frame]) == 10:
             if frame < 9:
                 Score_List[frame].append(Score_List[frame + 1][0])
+            
             else:
                 Score_List[frame].append(Score_List[10][0])
+        
         else:
             Score_List[frame].append(0)
 
