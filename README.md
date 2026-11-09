@@ -1,5 +1,4 @@
 # My-Stuff
-# 
-Authorized Users:
+Authorized Users:#
 # Ieuan-P | Main Account | (Owner)
 # IguanaGit | Restricted Device Account | (Contributor) 
