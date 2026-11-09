@@ -1,5 +1,5 @@
 # My-Stuff
-#
-# Contributors:
-# Ieuan-P
-# IguanaGit
+# -----------------------------------------------------
+# Ieuan-P | Main Account | (Owner)
+# IguanaGit | Restricted Device Account | (Contributor)
+# -----------------------------------------------------
