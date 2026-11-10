@@ -28,6 +28,8 @@ MyCalc = Calculator()
 
 def main():
     
+    
+    
     while True: # Num1 is less than or equal to 12 digits in length
 
         while True: # Num1 is a numerical value
@@ -42,6 +44,8 @@ def main():
         if len(str(Num1)) <= 12: break
         
         else: print("Error: input must not exceed 12 digits in length")
+    
+    
     
     while True: # Num2 is less than or equal to 12 digits in length
         
@@ -58,6 +62,8 @@ def main():
         
         else: print("Error: input must not exceed 12 digits in length")
     
+    
+    
     while True:
         
         Action = input("Enter either 'add', 'sub', 'mult', or 'div': ").lower()
@@ -73,7 +79,11 @@ def main():
         
         print("\n\n\n\n\n\n\n\n\n\nError: enter a type from the list\n\n\n\n\n\n\n\n\n\n")
 
+    
+    
     result = MyCalc.Action(Action, Num1, Num2)
+
+    
     
     if Action == "add":
         print(f"{Num1} + {Num2} = {result}")
