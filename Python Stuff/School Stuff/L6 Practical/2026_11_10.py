@@ -110,4 +110,6 @@ def main(): # Main program
         
         print(f"{Num1} / {Num2} = {result}")
 
-main()
+while True:
+    main()
+    if input("\nRun again? (Y/N): ").lower() == "n": break
